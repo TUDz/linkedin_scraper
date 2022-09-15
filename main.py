@@ -23,13 +23,13 @@ def scrap_key_words(driver: webdriver.Firefox, word: str):
     driver.get(DEFAULT_URL)
     sleep(7)
     driver.find_element(By.XPATH, '//input[@placeholder="Search"]').click()
-    sleep(2)
+    sleep(5)
     driver.find_element(By.XPATH, '//input[@placeholder="Search"]').send_keys(word)
-    sleep(2)
-    driver.find_element(By.XPATH, '//div[@id="triggered-expanded-ember13"]').click()
-    sleep(2)
+    sleep(5)
+    driver.find_element(By.XPATH, '//div[@id="triggered-expanded-ember14"]').click()
+    sleep(5)
     driver.find_elements(By.XPATH, '//ul[contains(@class, "reusable-search__entity-result-list")]/li')[0]
-    sleep(2)
+    sleep(5)
     sel = Selector(text=driver.page_source)
     posts = sel.xpath('//div[contains(@class, "entity-result__content-container")]')
 
@@ -78,7 +78,8 @@ def run():
     options.add_argument('--headless')
     options.add_argument('--disable-gpu')  # Last I checked this was necessary.
 
-    driver = webdriver.Firefox(options=options)
+    binary = FirefoxBinary('C:\Program Files\Mozilla Firefox\Firefox.exe')
+    driver = webdriver.Firefox()
     driver.get('https://www.linkedin.com')
     sleep(8)
 
@@ -87,7 +88,7 @@ def run():
 
     if logging_button:
         logging_button.click()
-        sleep(5)
+        sleep(10)
 
         driver.find_element(By.XPATH, USERNAME_INPUT).send_keys(USERNAME)
         driver.find_element(By.XPATH, PASSWORD_INPUT).send_keys(PASS)

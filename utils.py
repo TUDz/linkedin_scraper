@@ -3,13 +3,13 @@ import pygsheets
 import sys
 ####KEYS = './files/ticketmaster-scrapper-809f5ae8ed35.json'
 
-USERNAME = 'XXXXXXXXXX'
-PASS = 'XXXXXXXXX'
+USERNAME = 'ilucash25@gmail.com'
+PASS = 'I23sa57y'
 
 LOGGING_BUTTON = '//a[contains(@class, "nav__button-secondary")]'
 USERNAME_INPUT = '//input[@id="username"]'
 PASSWORD_INPUT = '//input[@id="password"]'
-SIGNIN_BUTTON = '//button[text()="Sign in"]'
+SIGNIN_BUTTON = '//button[text()="Iniciar sesión"]'
 
 
 def save_db_to_gsheets(db: pd.DataFrame):
